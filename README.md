@@ -1,16 +1,3 @@
-Thinking Worker Publishing Workflow
-
-생각노동자의 콘텐츠 생산 및 퍼블리싱 파이프라인입니다.
-
-flowchart TD
-    %% 노드 스타일 정의
-    classDef start fill:#2C3E35,stroke:#E3ECD6,stroke-width:2px,color:#E3ECD6;
-    classDef process fill:#F9F9F2,stroke:#8FB983,stroke-width:2px,color:#2C3E35;
-    classDef decision fill:#E3ECD6,stroke:#4A7A5E,stroke-width:2px,color:#2C3E35;
-    classDef github fill:#fff,stroke:#333,stroke-width:2px,color:#333;
-    classDef tistory fill:#ff6c00,stroke:#fff,stroke-width:2px,color:#fff;
-    classDef endstate fill:#4A7A5E,stroke:#2C3E35,stroke-width:2px,color:#fff;
-
     %% 1단계: 기획 및 집필
     Start([🚀 Start: 주제 선정 & 대화]):::start --> Brainstorm[🧠 브레인스토밍 & 초안 작성]:::process
     Brainstorm --> Review[📝 수정 및 보완 <br/>(이미지/주석/인용구 추가)]:::process
