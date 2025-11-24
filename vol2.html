@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생각노동자의 생각 - 질문의 격</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 커스텀 컬러 팔레트 */
+        :root {
+            --bg-paper: #F9F9F2;
+            --text-primary: #2C3E35;
+            --text-secondary: #5C6B63;
+            --accent-green: #8FB983;
+            --highlight: #E3ECD6;
+            --quote-border: #4A7A5E;
+        }
+        body {
+            background-color: var(--bg-paper);
+            color: var(--text-primary);
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.85;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, .serif-font { font-family: 'Noto Serif KR', serif; }
+        .drop-cap::first-letter {
+            float: left;
+            font-family: 'Noto Serif KR', serif;
+            font-size: 3.8rem;
+            line-height: 0.8;
+            font-weight: 700;
+            margin-right: 1rem;
+            margin-top: 0.2rem;
+            color: var(--quote-border);
+        }
+        .highlight {
+            background: linear-gradient(120deg, var(--highlight) 0%, var(--highlight) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 90%;
+            transition: background-size 0.3s ease;
+        }
+        .highlight:hover { background-size: 100% 80%; }
+        blockquote {
+            border-left: 4px solid var(--accent-green);
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 1.5rem 2rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            font-family: 'Noto Serif KR', serif;
+            color: #4A6354;
+            position: relative;
+            border-radius: 0 8px 8px 0;
+        }
+        .illustration-container {
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            position: relative;
+            box-shadow: 0 10px 20px -5px rgba(44, 62, 53, 0.15);
+            background-color: #E3E8E0;
+        }
+        .illustration-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(15%) contrast(95%) brightness(102%) saturate(85%);
+            transition: transform 0.7s ease, filter 0.5s ease;
+        }
+        .illustration-container:hover .illustration-img {
+            transform: scale(1.05);
+            filter: sepia(0%) contrast(100%) brightness(100%) saturate(100%);
+        }
+        .img-caption {
+            font-size: 0.85rem;
+            color: #88998C;
+            text-align: center;
+            margin-top: 0.8rem;
+            margin-bottom: 2.5rem;
+            font-family: 'Noto Serif KR', serif;
+            font-style: italic;
+        }
+        .fade-in {
+            animation: fadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+        #navMenu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        #navMenu.active { transform: translateX(0); }
+        .nav-link:hover { color: var(--quote-border); padding-left: 4px; }
+    </style>
+</head>
+<body class="antialiased selection:bg-green-200 selection:text-green-900">
+    <div class="fixed top-0 left-0 h-1.5 bg-[#6B8E76] z-50 transition-all duration-300" id="progressBar" style="width: 0%"></div>
+
+    <!-- 헤더 -->
+    <header class="w-full py-10 border-b border-[#E3E8E0] bg-[#F4F4ED]" id="top">
+        <div class="max-w-3xl mx-auto px-6 text-center fade-in" style="animation-delay: 0.1s;">
+            <a href="index.html" class="block text-xs font-bold tracking-[0.2em] text-[#8FB983] mb-3 uppercase hover:text-[#4A7A5E] transition">Thinking Worker's Magazine</a>
+            <h1 class="text-3xl md:text-4xl font-bold text-[#2C3E35] serif-font tracking-tight mb-2">생각노동자의 생각</h1>
+            <div class="flex justify-center items-center gap-3 mt-4 text-xs font-serif text-[#88998C] italic">
+                <span>Nov 2025</span>
+                <span class="w-1 h-1 bg-[#88998C] rounded-full"></span>
+                <!-- Vol 수정: 13 -> 2 -->
+                <span>Vol. 2</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 py-12 md:py-20">
+        <div class="text-center mb-16 fade-in" style="animation-delay: 0.2s;">
+            <div class="inline-block px-4 py-1.5 mb-6 text-xs font-bold text-[#4A7A5E] bg-[#E3ECD6] rounded-full tracking-wider">
+                INSIGHT & PHILOSOPHY
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold leading-tight serif-font text-[#2C3E35] mb-8">
+                질문의 격(格):<br>
+                <span class="text-[#6B8E76] italic">좋은 질문이</span><br>
+                좋은 인생을 만든다
+            </h2>
+            <div class="w-16 h-1 bg-[#2C3E35] mx-auto mb-8 opacity-20"></div>
+            <p class="text-xl text-[#5C6B63] leading-relaxed max-w-lg mx-auto font-serif italic">
+                "AI 시대, 우리가 잃어버린 '물음표'를 찾아서."
+            </p>
+        </div>
+
+        <!-- 1. 서론 -->
+        <section id="sec1" class="mb-20 fade-in" style="animation-delay: 0.3s;">
+            <div class="illustration-container">
+                <img src="https://images.unsplash.com/photo-1494883759339-0b042055a4ee?q=80&w=1200&auto=format&fit=crop" alt="Human Curiosity" class="illustration-img">
+            </div>
+            <div class="img-caption">Fig 1. 인간은 질문을 통해 세상을 확장해왔다.</div>
+            <h3 class="text-2xl font-bold mb-6 serif-font text-[#2C3E35] border-l-4 border-[#8FB983] pl-4">1. 호모 퀘스천(Homo Question), 질문하는 인간</h3>
+            <p class="drop-cap mb-6 text-lg text-[#44554B]">
+                인간은 태어나는 순간부터 질문하는 존재다. 아이들은 세상을 배우기 위해 끊임없이 "왜요?"를 묻는다. 이것이 바로 우리가 <strong>'질문하는 인간'</strong>이라 불리는 이유다.
+            </p>
+            <blockquote>
+                "사람을 판단하려면 그의 대답보다는<br>그의 질문을 보라."
+                <footer class="mt-3 text-sm font-bold text-[#5C6B63] not-italic">— 볼테르 (Voltaire)</footer>
+            </blockquote>
+        </section>
+
+        <!-- 2. 정답 사회 -->
+        <section id="sec2" class="mb-20 fade-in" style="animation-delay: 0.4s;">
+            <h3 class="text-2xl font-bold mb-6 serif-font text-[#2C3E35] border-l-4 border-[#8FB983] pl-4">2. 정답 자판기가 된 엘리트들</h3>
+            <p class="mb-6 text-[#44554B]">
+                현대의 교육 시스템은 우리에게 '빠르게 정답을 맞히는 법'만을 가르쳤다. 세상에서 가장 흔한 것이 '정답'이 되어버린 지금, 진짜 희소한 가치는 <strong>'좋은 질문을 던지는 능력'</strong>으로 이동하고 있다.
+            </p>
+        </section>
+
+        <!-- 3. AI에게 좋은 질문 -->
+        <section id="sec3" class="mb-20 fade-in" style="animation-delay: 0.5s;">
+             <div class="illustration-container">
+                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop" alt="AI Structure" class="illustration-img" style="object-position: center bottom;">
+            </div>
+            <div class="img-caption">Fig 2. AI에게 좋은 질문은 명확한 '설계도'와 같다.</div>
+            <h3 class="text-2xl font-bold mb-6 serif-font text-[#2C3E35] border-l-4 border-[#8FB983] pl-4">3. AI에게 좋은 질문: 감성에서 논리로</h3>
+            <p class="mb-6 text-[#44554B]">
+                AI와의 질문은 철저한 <strong>'구조와 논리'</strong>의 영역이다. AI에게 질문을 잘한다는 것은 내 머릿속의 생각을 해체하여, 논리적인 언어로 재조립하는 <strong>'사고의 설계 능력'</strong>이다.
+            </p>
+        </section>
+
+        <!-- 4. 결론 -->
+        <section id="sec4" class="mb-24 fade-in" style="animation-delay: 0.6s;">
+            <div class="illustration-container">
+                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200&auto=format&fit=crop" alt="Connection" class="illustration-img">
+            </div>
+            <div class="img-caption">Fig 3. 질문은 서로 다른 세계를 연결하는 다리다.</div>
+            <h3 class="text-2xl font-bold mb-6 serif-font text-[#2C3E35] border-l-4 border-[#8FB983] pl-4">4. 질문의 격이 관계의 격을 만든다</h3>
+            <div class="mt-12 text-center bg-white p-8 rounded-xl shadow-sm border border-[#EBECE8]">
+                <p class="text-lg font-serif italic text-[#5C6B63] mb-4">"좋은 질문은 좋은 대답보다 낫다."</p>
+                <p class="text-base text-[#2C3E35]">
+                    AI 시대, 최고의 능력은 코딩이 아니라 <strong>'질문의 격'</strong>을 높이는 것이다.
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-[#2C3E35] text-[#E3ECD6] py-16">
+            <div class="max-w-3xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="w-28 h-28 bg-[#44554B] rounded-full flex items-center justify-center text-5xl shadow-lg border-4 border-[#5C6B63]">🧑🏻‍💻</div>
+                    <div class="text-center md:text-left">
+                        <h4 class="text-2xl font-bold text-[#F9F9F2] mb-3 serif-font">생각노동자 (Thinking Worker)</h4>
+                        <p class="text-sm mb-6 text-[#A5B5AA]">AI와 인간의 공존을 고민하며, 기술 속에서 잃지 말아야 할 인문학적 가치를 탐구합니다.</p>
+                    </div>
+                </div>
+                <div class="mt-12 pt-8 border-t border-[#44554B] text-center text-xs text-[#5C6B63]">
+                    © 2025 Thinking Worker. All rights reserved. <br>
+                    Published by Jarvis Magazine Edition.
+                </div>
+            </div>
+        </footer>
+
+        <button id="menuBtn" class="fixed bottom-6 right-6 w-14 h-14 bg-[#2C3E35] text-[#E3ECD6] rounded-full shadow-2xl flex items-center justify-center text-2xl hover:bg-[#4A6354] transition-all z-50 focus:outline-none">🔖</button>
+
+        <div id="navMenu" class="fixed top-0 right-0 w-80 h-full bg-[#F9F9F2] shadow-2xl z-40 p-8 overflow-y-auto border-l border-[#E3E8E0]">
+            <div class="flex justify-between items-center mb-8">
+                <h5 class="text-[#8FB983] text-xs font-bold uppercase">Navigation</h5>
+                <button id="closeBtn" class="text-[#2C3E35] hover:text-[#8FB983] text-xl">✕</button>
+            </div>
+            
+            <div class="mb-10">
+                <h4 class="serif-font font-bold text-xl text-[#2C3E35] mb-4 border-b border-[#E3E8E0] pb-2">In This Issue</h4>
+                <ul class="space-y-3 text-sm text-[#5C6B63]">
+                    <li><a href="#top" class="nav-link block">Top: 질문의 격</a></li>
+                    <li><a href="#sec1" class="nav-link block">1. 호모 퀘스천</a></li>
+                    <li><a href="#sec2" class="nav-link block">2. 정답 자판기</a></li>
+                    <li><a href="#sec3" class="nav-link block">3. AI와 질문</a></li>
+                    <li><a href="#sec4" class="nav-link block">4. 관계의 격</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="serif-font font-bold text-xl text-[#2C3E35] mb-4 border-b border-[#E3E8E0] pb-2">Series Archive</h4>
+                <ul class="space-y-4">
+                    <!-- 1편 링크 (vol1.html로 연결) -->
+                    <li class="opacity-80 hover:opacity-100 transition">
+                        <a href="vol1.html" class="block group">
+                            <span class="block text-xs text-[#8FB983] font-bold mb-1">Vol. 1</span>
+                            <span class="block text-sm text-[#2C3E35] font-medium group-hover:text-[#4A7A5E] group-hover:underline transition-all">
+                                명령을 넘어 대화로: AI라는 거울
+                            </span>
+                        </a>
+                    </li>
+                    <!-- 현재 보고 있는 페이지 (Vol 2) -->
+                    <li class="relative pl-3 border-l-2 border-[#8FB983]">
+                        <span class="block text-xs text-[#8FB983] font-bold mb-1">Vol. 2 (Current)</span>
+                        <span class="block text-sm text-[#2C3E35] font-bold">질문의 격: 좋은 질문이 인생을 만든다</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mt-12 text-center">
+                 <a href="index.html" class="text-xs text-[#8FB983] font-bold border-b border-[#8FB983] pb-1">Back to Home</a>
+            </div>
+        </div>
+    
+    <script>
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+        };
+        const menuBtn = document.getElementById('menuBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = document.querySelectorAll('.nav-link');
+        function toggleMenu() { navMenu.classList.toggle('active'); }
+        menuBtn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+        navLinks.forEach(link => { link.addEventListener('click', () => { navMenu.classList.remove('active'); }); });
+    </script>
+</body>
+</html>
