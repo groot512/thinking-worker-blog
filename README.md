@@ -1,3 +1,7 @@
+Thinking Worker Publishing Workflow
+
+생각노동자의 콘텐츠 생산 및 퍼블리싱 파이프라인입니다.
+
 flowchart TD
     %% 노드 스타일 정의
     classDef start fill:#2C3E35,stroke:#E3ECD6,stroke-width:2px,color:#E3ECD6;
